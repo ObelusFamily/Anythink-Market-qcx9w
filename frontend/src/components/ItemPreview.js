@@ -41,7 +41,7 @@ const ItemPreview = (props) => {
         style={{ borderRadius: "20px" }}
         onError={({ currentTarget }) => {
           currentTarget.onerror = null; // prevents looping
-          currentTarget.src="placeholder.png";
+          currentTarget.src = "placeholder.png";
         }}
       />
       <div className="card-body">

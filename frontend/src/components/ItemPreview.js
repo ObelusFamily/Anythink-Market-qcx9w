@@ -39,6 +39,10 @@ const ItemPreview = (props) => {
         src={item?.image || "placeholder.png"}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src="placeholder.png";
+        }}
       />
       <div className="card-body">
         <Link to={`/item/${item.slug}`} className="text-white">
